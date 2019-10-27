@@ -8,10 +8,10 @@ function checkNumber (value) {
 
 var sum = 0;
 for(var i=0; i<5; i++){
-  var numeroInserito = prompt("Inserisci il " + (i+1) + " valore: (For)");
-  console.log(numeroInserito);
-  if(checkNumber(numeroInserito)){
-    var number = parseFloat(numeroInserito);
+  var numberEntered = prompt("Enter the " + (i+1) + " value: (For)");
+  console.log(numberEntered);
+  if(checkNumber(numberEntered)){
+    var number = parseFloat(numberEntered);
     sum += number;
   }
   else{
@@ -22,9 +22,9 @@ for(var i=0; i<5; i++){
 var sum1 = 0;
 var j = 0;
 while(j<5){
-  var numeroInserito2 = prompt("Inserisci il " + (j+1) + " valore: (While)");
-  if(checkNumber(numeroInserito2)){
-    var number1 = parseFloat(numeroInserito2);
+  var numberEntered2 = prompt("Enter the " + (j+1) + " value: (While)");
+  if(checkNumber(numberEntered2)){
+    var number1 = parseFloat(numberEntered2);
     sum1 += number1;
   }
   else{
@@ -33,5 +33,5 @@ while(j<5){
   j++;
 }
 
-document.getElementById("box").innerHTML = "Ciclo for: " + sum + "<br>" + " Ciclo while: " + sum1;
+document.getElementById("box").innerHTML = "Cycle for: " + sum + "<br>" + " Cycle while: " + sum1;
 

@@ -1,22 +1,23 @@
-var nomi = ["Angelo", "Giuseppe", "Filippo", "Chiara"];
-var nomeInserito = prompt("Inserisci il tuo nome per sapere se sei stato invitato: ");
-var trovato = false;
-var test = /^[a-z]+$/i;
 
-if (test.test(nomeInserito)) {
-  for(var i=0; i<nomi.length && trovato==false; i++){
-    if(nomeInserito === nomi[i]){
-      document.getElementById("box").innerHTML = "Sei stato/a invitato/a";
-      trovato = true;
-    } else {
-      document.getElementById("box").innerHTML = "Mi dispiace non sei stato/a invitato/a";
+document.getElementById("check").onclick = function(){
+  var nomi = ["Angelo", "Giuseppe", "Filippo", "Chiara"];
+  var found = false;
+  var test = /^[a-z]+$/i;
+  var name = document.getElementById("name").value;
+  var result = document.getElementById("result");
+
+  if(test.test(name)){
+    for(var i=0; i<nomi.length && found==false; i++){
+      if(name === nomi[i]){
+        result.innerHTML = "You have been invited";
+        found = true;
+      } else {
+        document.getElementById("name").value = null;
+        result.innerHTML = "You have not been invited";
+      }
     }
-  }
+  } else {
+    result.innerHTML = "Incorrect values, try again!";
+    document.getElementById("name").value = null;
+  }  
 }
-
-
-// if(trovato == true){
-//   document.getElementById("box").innerHTML = "Sei stato/a invitato/a";
-// } else {
-//   document.getElementById("box").innerHTML = "Mi dispiace non sei stato/a invitato/a";
-// }
