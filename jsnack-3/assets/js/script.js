@@ -1,16 +1,37 @@
-var somma = 0;
+function checkNumber (value) {
+  if(isNaN(value) || value === "" || value === null){
+    return false;
+  } else {
+    return true;
+  }
+}
+
+var sum = 0;
 for(var i=0; i<5; i++){
-  var numeroInserito = parseInt(prompt("Inserisci il " + (i+1) + " valore: (For)"));
-  somma = somma + numeroInserito;
+  var numeroInserito = prompt("Inserisci il " + (i+1) + " valore: (For)");
+  console.log(numeroInserito);
+  if(checkNumber(numeroInserito)){
+    var number = parseFloat(numeroInserito);
+    sum += number;
+  }
+  else{
+    i--;
+  }
 }
 
-var somma1 = 0;
-var i = 0;
-while(i<5){
-  var numeroInserito2 = parseInt(prompt("Inserisci il " + (i+1) + " valore: (While)"));
-  somma1 = somma1 + numeroInserito2;
-  i++;
+var sum1 = 0;
+var j = 0;
+while(j<5){
+  var numeroInserito2 = prompt("Inserisci il " + (j+1) + " valore: (While)");
+  if(checkNumber(numeroInserito2)){
+    var number1 = parseFloat(numeroInserito2);
+    sum1 += number1;
+  }
+  else{
+    j--;
+  }
+  j++;
 }
 
-document.getElementById("box").innerHTML = "Ciclo for: " + somma + "<br>" + " Ciclo while: " + somma1;
+document.getElementById("box").innerHTML = "Ciclo for: " + sum + "<br>" + " Ciclo while: " + sum1;
 
