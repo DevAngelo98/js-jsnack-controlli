@@ -1,6 +1,6 @@
 function checkNumber (value) {
 
-  if(isNaN(value) || value === "" ){
+  if(isNaN(value) || value === "" || value === null){
     return false;
   } else {
     return true;

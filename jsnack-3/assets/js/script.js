@@ -9,7 +9,6 @@ function checkNumber (value) {
 var sum = 0;
 for(var i=0; i<5; i++){
   var numberEntered = prompt("Enter the " + (i+1) + " value: (For)");
-  console.log(numberEntered);
   if(checkNumber(numberEntered)){
     var number = parseFloat(numberEntered);
     sum += number;
